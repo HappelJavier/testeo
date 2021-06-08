@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+	<div th:replace="fragments/header :: headhtml"></div>
+	<meta charset="UTF-8"></meta>
+	<title>Home</title>
+</head>
+
+<body>
+	<div class="container">
+		<div th:replace="fragments/main-header :: header">Header</div>
+		<div class="row">
+			<div class="col-12 ">
+				<h1 class="center">Happel Javier, Curriculm Vitae</h1>
+				<h5 class="center">Programación web - Html5, Css, Bootstrap, Javascript, Jquery, Ajax, Json, Java, Spring(mvc), Thymeleaf, SQL - Metodologías Agiles (Scrum)</h5>
+				<div class="center"><img class="img-fluid col-2 center" src="/imagenes/perfil.jpg" alt="perfil"></img></div>
+				<ul>
+					<li><h6 class="black">Nombre y Apellido: <a>Javier Happel</a></h6></li>
+					<li><h6 class="black">Edad: <a>22 años</a></h6></li>
+					<li><h6 class="black">Zona de residencia: <a>Villa Diamante, Lanús</a></h6></li>
+					<li><h6 class="black">Mail: <a>happeljavierleonardo@gmail.com</a></h6></li>
+					<li><h6 class="black">Perfil LinkedIn: <a class="gray" target="_blank" href="https://www.linkedin.com/in/happel-javier/">https://www.linkedin.com/in/happel-javier/</a></h6></li>
+					<li><h6 class="black">Perfil Github: <a class="gray" target="_blank" href="https://github.com/HappelJavier">https://github.com/HappelJavier</a></h6></li>
+				</ul>
+				<br></br>
+				<h4 class="black">Formación Académica:</h4>
+				<ul>
+					<li><h6 class="black">Comunidad IT 2018: <a>Desarrollador de Aplicaciones Java.</a></h6></li>
+					<li><h6 class="black">Comunidad IT 2018: <a>Maquetador Web</a></h6></li>
+					<li><h6 class="black">E.T. N° 11 Manuel Belgrano: 2009/2014 <a>Técnico electromecánico.</a></h6></li>
+				</ul>
+				<br></br>
+				<h4 class="black">Habilidades</h4>
+				<ul>
+					<li>
+						<h6>Programación web</h6>
+						<ul>
+							<li>Html5, Css, Bootstrap, Javascript, Jquery, Ajax, Json.</li>
+							<li>Java, Spring(mvc), Thymeleaf, SQL</li>
+							<li>Metodologías Agiles(Scrum)</li>
+						</ul>
+					</li>
+					<li><h6>Microsoft Office a nivel medio-avanzado.</h6></li>
+					<li><h6>AutoCAD a nivel medio.</h6></li>
+					<li><h6>Armado y reparación de PC.</h6></li>
+					<li><h6>Nivel de Inglés: Hablado intermedio, Escrito Alto.</h6></li>
+					<li><h6>Nivel de Portugués: Hablado basico, Escrito basico.</h6></li>
+				</ul>
+			</div>
+		</div>
+		<div th:replace="fragments/header :: footer-main"></div>
+	</div>
+</body>
+
+</html>

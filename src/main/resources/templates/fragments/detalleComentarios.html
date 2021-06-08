@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+	<body>
+		<div class="comentario-body" th:fragment="comentarios">
+			<div class="row">
+
+					<div>
+						<textarea class="text-com coment-area" id="comentario-nuevo" th:attr="data-id=${id}, data-fecha=3" rows="4" cols="50"></textarea>
+					</div>
+					<div class="col-4">
+						<label class="btn btn-primary btn-xs proc-comentario btn-com-com" >Comentar</label>
+					</div>
+						
+			</div>
+
+			<div class="col-12 comentario" th:each="comentario:${listadoComentarios}" th:id="${comentario.id}">
+				<div class="row com-box bg-com">
+					<div class="col-1">
+						<img class="img-fluid" th:src="${comentario.foto_perfil}"></img>
+					</div>
+					<div class="col-11 com-text">
+						<div class="row">
+							<div class="col-11">
+								<label class="text-capitalize" th:text="${comentario.nombre_usuario} + ' '"></label>
+								<label class="fecha-com" th:text="${comentario.fecha}"></label>
+							</div>
+							<div class="col-1 flex-end">
+								<label th:if="${comentario.id_usuario_emisor} == ${idlogeado}" class="boton-modificar-com mx-auto"><i class="fa fa-edit"></i></label>
+								<label class="boton-subcomentar mx-auto"><i class="fa fa-reply "></i></label>
+							</div>
+						
+						</div>
+						<h6 th:id="'cm' + ${comentario.id}" class="comentario-modificable"  th:text="${comentario.contenido}"></h6>
+						
+						
+						<div class="form-modificar-oculto form-mod">
+							<textarea class="text-com coment-area" th:id="'c'+${comentario.id}" th:text="${comentario.contenido}" rows="4" cols="50"></textarea>
+						</div>
+						<label class="btn btn-primary btn-xs div_oculto btn-mod-com " th:attr="data-id=${id}, data-idcom=${comentario.id}">Modificar</label>
+						<label class="btn btn-primary btn-xs form-eliminar-com div_oculto btn-del-com" th:attr="data-id=${id}, data-idcom=${comentario.id}">Borrar Comentario</label>
+
+						<div class="form-subcomentar-oculto form-subcom">
+							<div>
+								<textarea class="text-com coment-area subcomentario-nuevo" th:attr="data-idcom=${comentario.id}, data-id=${id}, data-fecha=3" rows="4" cols="50"></textarea>
+							</div>
+							<div>
+								<label class="btn btn-primary btn-xs proc-comentario btn-subcom-com" >Comentar</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-12 subcom-box">
+					<div class="bg-subcom subcom-unibox" th:each="subcom:${comentario.subcomentario}" th:id="${subcom.id}">
+						<div class=" row">
+							<div class="col-1">
+								<img class="img-fluid" th:src="${subcom.foto_perfil}"></img>
+							</div>
+							<div class="col-11 com-text">
+								<div class="row">
+									<div class="col-11">
+										<label class="text-capitalize" th:text="${subcom.nombre_usuario}"></label>
+										<label class="fecha-com" th:text="${subcom.fecha}"></label>
+									</div>
+									<div class="col-1 flex-end">
+										<label th:if="${subcom.id_usuario_emisor} == ${idlogeado}" class="boton-modificar-com mx-auto"><i class="fa fa-edit"></i></label>
+									</div>
+								</div>
+								<h6 th:id="'cm' + ${subcom.id}" class="comentario-modificable"  th:text="${subcom.contenido}"></h6>
+								<div class="form-modificar-oculto form-mod">
+									<textarea class="text-com coment-area" th:id="'c'+${subcom.id}" th:text="${subcom.contenido}" rows="4" cols="50"></textarea>
+								</div>
+								<label class="btn btn-primary btn-xs div_oculto btn-mod-com" th:attr="data-id=${id}, data-idcom=${subcom.id}">Modificar</label>
+								<label class="btn btn-primary btn-xs form-eliminar-com div_oculto btn-del-com" th:attr="data-id=${id}, data-idcom=${subcom.id}">Borrar Comentario</label>
+							</div>
+						</div>
+					</div>	
+				</div>	
+			</div>
+		</div>
+	</body>
+</html>
+
+
