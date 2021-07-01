@@ -1,0 +1,65 @@
+#countdown{
+  text-align: center;
+  font-size: 30px;
+  margin-top: 0px;
+}
+body{
+  background: url("imagenes/PNG1MYO2.png");
+  background-repeat: repeat-y;
+  background-size: 70%;
+  background-color: black;
+  background-position-x: center;
+  color: white;
+}
+
+.jungler {
+  background: url("imagenes/Jungle.png");
+  background-size: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.adc {
+  background: url("imagenes/ADC.png");
+  background-size: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.mid {
+  background: url("imagenes/MidLane.png");
+  background-size: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.support {
+  background: url("imagenes/Support.png");
+  background-size: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.top {
+  background: url("imagenes/TopLane.png");
+  background-size: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+table {
+    background: rgba(0,0,0,0.5);
+    align-self: center;
+    border-spacing: 0;
+    padding-inline: 15%;
+    width: 100%;
+  }
+  
+  th {
+    cursor: pointer;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 16px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: rgba(8, 5, 39, 0.5)
+  }
