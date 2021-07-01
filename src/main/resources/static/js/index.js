@@ -277,12 +277,12 @@ function sortTableWin(n) {
 
   function sortTableElo(n) {
     var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-    var elos = ["CHALLENGER","DIAMOND I","DIAMOND II","DIAMOND III","DIAMOND IV"
-    ,"PLATINUM I","PLATINUM II","PLATINUM III","PLATINUM IV"
-    ,"GOLD I","GOLD II","GOLD III","GOLD IV"
-    ,"SILVER I","SILVER II","SILVER III","SILVER IV"
-    ,"BRONZE I","BRONZE II","BRONZE III","BRONZE IV"
-    ,"IRON I","IRON II","IRON III","IRON IV"]
+    var elos = ["RETADOR","GRAN MAESTRO","DIAMANTE I","DIAMANTE II","DIAMANTE III","DIAMANTE IV"
+    ,"PLATINO I","PLATINO II","PLATINO III","PLATINO IV"
+    ,"ORO I","ORO II","ORO III","ORO IV"
+    ,"PLATA I","PLATA II","PLATA III","PLATA IV"
+    ,"BRONCE I","BRONCE II","BRONCE III","BRONCE IV"
+    ,"HIERRO I","HIERRO II","HIERRO III","HIERRO IV"]
     table = document.getElementById("players");
     switching = true;
     //Set the sorting direction to ascending:

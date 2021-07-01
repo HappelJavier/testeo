@@ -55,20 +55,50 @@ public class MainController {
 			double perdidastemp;
 			double totalestemp;
 			double winratetemp;
+			String tier;
+			String rank;
 			System.out.print(main.getJSONObject(0).getString("queueType"));
 			if(main.getJSONObject(0).getString("queueType").equals("RANKED_FLEX_SR")) {
 				JSONObject flex = main.getJSONObject(0);
 				JSONObject soloq = main.getJSONObject(1);
 				ganadastemp = soloq.getInt("wins");
 				perdidastemp = soloq.getInt("losses");
-				elo = soloq.getString("tier")+" "+soloq.getString("rank");
+				tier = soloq.getString("tier");
+				rank = soloq.getString("rank");
 			}else {
 				JSONObject flex = main.getJSONObject(1);
 				JSONObject soloq = main.getJSONObject(0);
 				ganadastemp = soloq.getInt("wins");
 				perdidastemp = soloq.getInt("losses");
-				elo = soloq.getString("tier")+" "+soloq.getString("rank");
+				tier = soloq.getString("tier");
+				rank = soloq.getString("rank");
 			}
+			if(tier.equals("IRON")){
+				tier="HIERRO";
+			}
+			if(tier.equals("BRONZE")){
+				tier="BRONCE";
+			}
+			if(tier.equals("SILVER")){
+				tier="PLATA";
+			}
+			if(tier.equals("GOLD")){
+				tier="ORO";
+			}
+			if(tier.equals("PLATINUM")){
+				tier="PLATINO";
+			}
+			if(tier.equals("DIAMOND")){
+				tier="DIAMANTE";
+			}
+			if(tier.equals("GRANDMASTER")){
+				tier="GRAN MAESTRO";
+			}
+			if(tier.equals("CHALLENGER")){
+				tier="RETADOR";
+			}
+			
+			elo = tier + " " + rank;
 			totalestemp = ganadastemp + perdidastemp;
 			winratetemp = ganadastemp/(totalestemp/100);
 			
@@ -81,6 +111,7 @@ public class MainController {
 			
 			
 			Summoner invocador = new Summoner();
+			invocador.setNumid(i+1);
 			invocador.setElo(elo);
 			invocador.setPosicion(rol);
 			invocador.setTotal(totales);

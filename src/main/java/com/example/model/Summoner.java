@@ -1,6 +1,7 @@
 package com.example.model;
 
 public class Summoner {
+	private int numid;
 	private String puuid;
 	private String id;
 	private String posicion;
@@ -16,9 +17,10 @@ public class Summoner {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Summoner(String puuid, String id, String posicion, String nombre, String elo, int total, int ganadas,
-			int perdidas, double winrate) {
+	public Summoner(int numid, String puuid, String id, String posicion, String nombre, String elo, int total,
+			int ganadas, int perdidas, double winrate) {
 		super();
+		this.numid = numid;
 		this.puuid = puuid;
 		this.id = id;
 		this.posicion = posicion;
@@ -28,6 +30,14 @@ public class Summoner {
 		this.ganadas = ganadas;
 		this.perdidas = perdidas;
 		this.winrate = winrate;
+	}
+
+	public int getNumid() {
+		return numid;
+	}
+
+	public void setNumid(int numid) {
+		this.numid = numid;
 	}
 
 	public String getPuuid() {
@@ -102,5 +112,6 @@ public class Summoner {
 		this.winrate = winrate;
 	}
 
+	
 		
 }
