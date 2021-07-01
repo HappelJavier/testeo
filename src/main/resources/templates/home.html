@@ -12,13 +12,13 @@
 			<h2 class="titulo">TABLA DE POSICIONES</h2>
 			<table id="players">
 				<tr>
-					<th class="text-center" onclick="sortTable(1)">Rol</th>
-		          	<th onclick="sortTableNick(2)">Nick</th>
-		          	<th onclick="sortTableElo(3)">Elo</th>
-		          	<th onclick="sortTableTotal(4)">Partidas</th>
-		          	<th onclick="sortTableWin(5)">Ganadas</th>
-		          	<th onclick="sortTableLose(6)">Perdidas</th>
-		          	<th onclick="sortTablePercent(7)">WinRate</th>
+					<th class="text-center" onclick="sortTable(0)">Rol</th>
+		          	<th onclick="sortTableNick(1)">Nick</th>
+		          	<th onclick="sortTableElo(2)">Elo</th>
+		          	<th onclick="sortTableTotal(3)">Partidas</th>
+		          	<th onclick="sortTableWin(4)">Ganadas</th>
+		          	<th onclick="sortTableLose(5)">Perdidas</th>
+		          	<th onclick="sortTablePercent(6)">WinRate</th>
 				</tr>
 				<tr th:id="${summoner.nombre}" th:each="summoner:${listadoSummoners}">
 					<td th:class="${summoner.posicion}"></td>
