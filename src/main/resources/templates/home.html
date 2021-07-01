@@ -9,7 +9,7 @@
 
 <body>
 	<div class="container">
-			<h2>TABLA DE POSICIONES</h2>
+			<h2 class="titulo">TABLA DE POSICIONES</h2>
 			<table id="players">
 				<tr>
 					<th onclick="sortTable(0)">Posicion</th>
@@ -30,6 +30,7 @@
 					<td th:text="'%'+${summoner.winrate}"></td>
 				</tr>						
 			</table>
+			<p id="countdown"></p>
 	</div>
 </body>
 
